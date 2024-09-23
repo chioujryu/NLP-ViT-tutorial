@@ -209,6 +209,7 @@ class VisionTransformer(nn.Module):
         )
 
     def forward(self, images):
+
         x = self.patch_embedding(images)
 
         x = self.positional_encoding(x)
@@ -219,7 +220,3 @@ class VisionTransformer(nn.Module):
 
         return x
 
-m = nn.Softmax(dim=1)
-input = torch.randn(2, 3)
-output = m(input)
-print(output)
